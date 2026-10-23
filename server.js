@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 const PORT = Number(process.env.PORT) || 5000;
-const HOST = process.env.HOST || "127.0.0.1";
+const HOST = process.env.HOST || "0.0.0.0";
 const OLLAMA_URL = (process.env.OLLAMA_URL || "http://127.0.0.1:11434").replace(/\/+$/, "");
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL || "qwen2.5:3b";
 const REQUEST_TIMEOUT_MS = Number(process.env.OLLAMA_TIMEOUT_MS) || 120000;
