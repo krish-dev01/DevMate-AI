@@ -3,7 +3,13 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import "./App.css";
 
-const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:5000").replace(/\/$/, "");
+const API_URL = (
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.DEV
+    ? "http://localhost:5000"
+    : "https://devmate-ai-backend-dn7r.onrender.com")
+).replace(/\/$/, "");
+
 const STORAGE_KEY = "devmate-conversations";
 const ACTIVE_CHAT_KEY = "devmate-active-chat";
 const MAX_QUESTION_LENGTH = 8000;
